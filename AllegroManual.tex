@@ -45,6 +45,8 @@ En la entrada \emph{Add-ons} seleccione \emph{Yes} en \emph{Font Addon} (\emph{F
 \section{Ejemplos}
 \subsection{Ejemplo 1: ¡Bienvenido a Allegro!}
 Para verificar que todo funciona, cree un archivo source.cpp y copie el siguiente código.
+Al ejecutar se creará un a ventana e imprimirá la frase \emph{Welcome to Allegro!}, que depués de 5 segundos se cerrará.
+\subsubsection{Código fuente}
 \begin{verbatim}
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
@@ -64,7 +66,6 @@ int main()
      return 0;
 }
 \end{verbatim}
-Al ejecutar, este código creará un a ventana e imprimirá la frase \emph{Welcome to Allegro!}, que depués de 5 segundos se cerrará.
 
 \subsection{Ejemplo 2:  Visualización de una imagen}
 En el siguiente ejemplo se mostrará como visualizar una imagen en Allegro. Para que pueda mostrar imagenes, se deberá usar el addon llamado \emph{Image Addon}, además de la configuración de \emph{Dynamic Debug - Dynamic Runtime} (véase sección 2.2). Todas las imágenes que sean utilizadas por el código deben de estar en la misma carpeta que el archivo source.cpp. De lo contrario Allegro no encontrará la imagen. El output del programa, según el código escrito, es el siguiente:
@@ -72,50 +73,108 @@ En el siguiente ejemplo se mostrará como visualizar una imagen en Allegro. Para
 \includegraphics[scale=0.3]{SC12.png}
 \end{center}
 La imagen \tt test.png \rm con las dimesiones 150 x 150 px que se usará en este ejemplo se puede descargar de \tt http://i.imgur.com/5uoNsJs.png \rm .
-
+\subsubsection{Código fuente}
 \begin{verbatim}
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
-\end{verbatim}
-\fbox{ \parbox{\textwidth}{Las librerías necesarias son \tt allegro.h\rm , la librería principal de Allegro, y \tt allegro\_image.h\rm , la librería del addon de imágenes de Allegro. }}
-\begin{verbatim}
+
 int main() 
 {
      al_init();
      al_init_image_addon();
-\end{verbatim}
-\fbox{\parbox{\textwidth}{Se inicializa Allegro y el addon de imágenes de Allegro.}}
-\begin{verbatim}
+     
      ALLEGRO_DISPLAY *display = NULL;
      ALLEGRO_BITMAP *fondo = al_load_bitmap("test.png");
      display = al_create_display(750, 600);
 \end{verbatim}
-\fbox{\parbox{\textwidth}{Se crean dos structs: \tt ALLEGRO\_DISPLAY *display\rm , la ventana en la que el programa va a mostrar el output, y \tt ALLEGRO\_BITMAP *fondo\rm , el bitmap que el programa usará.}}
+\pagebreak
 \begin{verbatim}
      al_draw_scaled_bitmap(fondo, 0, 0, 150, 150, 0, 0, 600, 600, NULL);
      for (int i = 0; i < 4; i++)
           al_draw_bitmap(fondo, 600, (150 * i), NULL);
-\end{verbatim}
-\fbox{\parbox{\textwidth}{Se dibujan los bitmaps en el buffer. La función \tt al\_draw\_bitmap()\rm  tiene como argumentos el puntero, la posición en la que el bitmap va a ser dibujado en la ventana y flags, que pueden volcar el bitmap a lo largo del eje \emph{y} (\tt ALLEGRO\_FLIP\_HORIZONTAL\rm), el eje \emph{x} (\tt ALLEGRO\_FLIP\_VERTICAL\rm) o cualquier conbinación de los dos.
-
-En este caso se le asigna un valor nulo (\tt NULL\rm ), ya que no se va a utilizar ninguna de las dos opciones.}}
-\begin{verbatim}
+      
      al_flip_display();
-\end{verbatim}
-\fbox{\parbox{\textwidth}{Se 'vuelca' el buffer a la ventana.}}
-\begin{verbatim}
+     
      al_rest(10.0);
-\end{verbatim}
-\fbox{\parbox{\textwidth}{Se espera 10.0 segundos antes de ejecutar el resto del código.}}
-\begin{verbatim}
+     
      al_destroy_bitmap(fondo);
      al_destroy_display(display);
-\end{verbatim}
-\fbox{\parbox{\textwidth}{Finalmente se destruyen los structs, liberando así la memoria.}}
-\begin{verbatim}
-     return 0;
+     
+     return = 0;
 }
 \end{verbatim}
+\subsubsection{Guía del código}
+
+\fbox{\parbox{\textwidth}{\tt \#include $<$allegro5/allegro.h$>$
+
+\#include  allegro5/allegro\_image.h$>$\rm}}\\
+
+Las librerías necesarias son \tt allegro.h\rm , la librería principal de Allegro, y \tt allegro\_image.h\rm ,
+
+la librería del addon de imágenes de Allegro.\\
+
+\fbox{\parbox{\textwidth}{\tt
+al\_init();
+
+al\_init\_image\_addon();\rm}}\\
+
+Inicializa Allegro y el addon de imágenes de Allegro.\\
+
+\fbox{\parbox{\textwidth}{
+\tt ALLEGRO\_DISPLAY *display = NULL;
+
+ALLEGRO\_BITMAP *fondo = al\_load\_bitmap("test.png")
+
+display = al\_create\_display(750, 600)}}\\
+
+Se crean dos structs: \tt ALLEGRO\_DISPLAY *display\rm , la ventana en la que el programa va a mostrar
+
+el output, y\tt ALLEGRO\_BITMAP *fondo\rm , el bitmap que el programa usará.\\
+
+\fbox{\parbox{\textwidth}{\tt
+al\_draw\_scaled\_bitmap(fondo, 0, 0, 150, 150, 0, 0, 600, 600, NULL);
+
+al\_draw\_bitmap(fondo, 600, (150 * i), NULL);\rm}}\\
+
+Dibuja los bitmaps en el buffer.
+
+La función \tt al\_draw\_bitmap()\rm  tiene como argumentos el puntero, la posición en la que el
+
+bitmap va a ser dibujado en la ventana y flags, que pueden volcar el bitmap a lo largo del eje
+
+\emph{y} (\tt ALLEGRO\_FLIP\_HORIZONTAL\rm), el eje \emph{x} (\tt ALLEGRO\_FLIP\_VERTICAL\rm) o cualquier conbinación de
+
+los dos. En este caso se le asigna un valor nulo (\tt NULL\rm ), ya que no se va a utilizar ninguna de las
+
+dos opciones.
+
+La función \tt al\_draw\_bitmap\_scaled()\rm tiene los siguientes argumentos:
+\begin{itemize}
+\item el puntero del bitmap objetivo
+\item la posición del original
+\item el tamaño del original
+\item la posición del bitmap a escala
+\item el damaño del bitmap a escala
+\item los flags (\tt ALLEGRO\_FLIP\_HORIZONTAL\rm \ / \tt ALLEGRO\_FLIP\_VERTICAL\rm)
+\end{itemize}
+
+
+\fbox{\parbox{\textwidth}{\tt
+al\_flip\_display();\rm}}\\
+
+'Vuelca' el buffer a la ventana.\\
+
+\fbox{\parbox{\textwidth}{\tt
+al\_rest(10.0);\rm}}\\
+
+Espera 10.0 segundos antes de ejecutar el resto del código.\\
+
+\fbox{\parbox{\textwidth}{\tt
+al\_destroy\_bitmap(fondo);
+
+al\_destroy\_display(display);\rm}}\\
+
+Finalmente se destruyen los structs \tt fondo \rm y \tt display\rm , liberando así la memoria.
 \vfill
 \begin{thebibliography}{9}
 \bibitem{AllegroManual}
