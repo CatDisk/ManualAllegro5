@@ -77,7 +77,7 @@ La imagen \tt test.png \rm con las dimesiones 150 x 150 px que se usará en este
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 \end{verbatim}
-\fbox{ \parbox{\textwidth}{Las librerías necesarias son \emph{allegro.h}, la librería principal de Allegro, y \emph{allegro\_image.h}, la librería del addon de imágenes de Allegro. }}
+\fbox{ \parbox{\textwidth}{Las librerías necesarias son \tt allegro.h\rm , la librería principal de Allegro, y \tt allegro\_image.h\rm , la librería del addon de imágenes de Allegro. }}
 \begin{verbatim}
 int main() 
 {
@@ -90,13 +90,15 @@ int main()
      ALLEGRO_BITMAP *fondo = al_load_bitmap("test.png");
      display = al_create_display(750, 600);
 \end{verbatim}
-\fbox{\parbox{\textwidth}{Se crean dos structs: \emph{ALLEGRO\_DISPLAY *display}, la ventana en la que el programa va a mostrar el output, y \emph{ALLEGRO\_BITMAP *fondo}, el bitmap que el programa usará.}}
+\fbox{\parbox{\textwidth}{Se crean dos structs: \tt ALLEGRO\_DISPLAY *display\rm , la ventana en la que el programa va a mostrar el output, y \tt ALLEGRO\_BITMAP *fondo\rm , el bitmap que el programa usará.}}
 \begin{verbatim}
      al_draw_scaled_bitmap(fondo, 0, 0, 150, 150, 0, 0, 600, 600, NULL);
-     for (int i = 0; i<4;i++)
+     for (int i = 0; i < 4; i++)
           al_draw_bitmap(fondo, 600, (150 * i), NULL);
 \end{verbatim}
-\fbox{\parbox{\textwidth}{Se dibujan los bitmaps en el buffer. \emph{al\_draw\_scaled\_bitmap()} tiene como argumentos el puntero del bitmap, la posición y tamaño del bitmap inicial, y la posición y tamaño del bitmap  modificado.}}
+\fbox{\parbox{\textwidth}{Se dibujan los bitmaps en el buffer. La función \tt al\_draw\_bitmap()\rm  tiene como argumentos el puntero, la posición en la que el bitmap va a ser dibujado en la ventana y flags, que pueden volcar el bitmap a lo largo del eje \emph{y} (\tt ALLEGRO\_FLIP\_HORIZONTAL\rm), el eje \emph{x} (\tt ALLEGRO\_FLIP\_VERTICAL\rm) o cualquier conbinación de los dos.
+
+En este caso se le asigna un valor nulo (\tt NULL\rm ), ya que no se va a utilizar ninguna de las dos opciones.}}
 \begin{verbatim}
      al_flip_display();
 \end{verbatim}

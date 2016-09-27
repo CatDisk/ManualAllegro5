@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.22)  25 SEP 2016 19:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.22)  26 SEP 2016 19:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -546,34 +546,34 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 93--94
  []
 
 [4 <./SC12.png>]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 99--100
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 101--102
 [] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 103--104
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 105--106
 [] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 107--108
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 109--110
 [] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 112--113
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 114--115
 [] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 123.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 125.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 125.
 
-Underfull \hbox (badness 1490) in paragraph at lines 120--125
+Underfull \hbox (badness 1490) in paragraph at lines 122--127
 []\OT1/cmr/m/n/10.95 Matthew Le-ver-ton, Alle-gro 5.0 re-fe-ren-ce ma-nual, []\
 OT1/cmtt/m/n/10.95 https://www.allegro.cc/manual/5/\OT1/cmr/m/n/10.95 ,
  []
@@ -600,7 +600,7 @@ local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
 ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/lo
 cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on AllegroManual.pdf (5 pages, 256663 bytes).
+Output written on AllegroManual.pdf (5 pages, 256127 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
