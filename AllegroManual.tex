@@ -129,7 +129,7 @@ display = al\_create\_display(750, 600)}}\\
 
 Se crean dos structs: \tt ALLEGRO\_DISPLAY *display\rm , la ventana en la que el programa va a mostrar
 
-el output, y\tt ALLEGRO\_BITMAP *fondo\rm , el bitmap que el programa usará.\\
+el output, y \tt ALLEGRO\_BITMAP *fondo\rm , el bitmap que el programa usará.\\
 
 \fbox{\parbox{\textwidth}{\tt
 al\_draw\_scaled\_bitmap(fondo, 0, 0, 150, 150, 0, 0, 600, 600, NULL);
@@ -148,14 +148,14 @@ los dos. En este caso se le asigna un valor nulo (\tt NULL\rm ), ya que no se va
 
 dos opciones.
 
-La función \tt al\_draw\_bitmap\_scaled()\rm tiene los siguientes argumentos:
+La función \tt al\_draw\_bitmap\_scaled() \rm tiene los siguientes argumentos:
 \begin{itemize}
 \item el puntero del bitmap objetivo
 \item la posición del original
 \item el tamaño del original
 \item la posición del bitmap a escala
 \item el damaño del bitmap a escala
-\item los flags (\tt ALLEGRO\_FLIP\_HORIZONTAL\rm \ / \tt ALLEGRO\_FLIP\_VERTICAL\rm)
+\item los flags \tt ALLEGRO\_FLIP\_HORIZONTAL\rm \ o \tt ALLEGRO\_FLIP\_VERTICAL\rm
 \end{itemize}
 
 
